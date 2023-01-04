@@ -10,6 +10,13 @@ class View {
     newParagraph.innerText = 'I was created dynamically by Javascript';
     this.mainContainerEl.append(newParagraph);
   }
+
+  clearParagraphs() {
+    const allParagraphs = document.querySelectorAll('p');
+    allParagraphs.forEach(paragraph => {
+      paragraph.remove();
+    });
+  }
 }
 
 module.exports = View;

@@ -13,4 +13,23 @@ describe('Page view', () => {
 
     expect(document.querySelectorAll('p').length).toBe(2);
   });
+
+  it('adds a new paragraph', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+
+    const view = new View();
+    view.addParagraph();
+    view.addParagraph();
+
+    expect(document.querySelectorAll('p').length).toBe(4);
+  });
+
+  it('clears all paragraphs', () => {
+    document.body.innerHTML =fs.readFileSync('./index.html');
+
+    const view = new View();
+    view.clearParagraphs();
+
+    expect(document.querySelectorAll('p').length).toBe(0);
+  });
 });
